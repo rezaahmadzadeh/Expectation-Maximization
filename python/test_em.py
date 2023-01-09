@@ -60,29 +60,31 @@ def test():
     # run EM to find the parameters 
     Data_f, Param_f = EM(Data_r, Param)
 
-    plt.scatter(Data_r[:, 0], Data_r[:, 1], 10, 'b')
-    plt.xlabel('x')
-    plt.ylabel('y')
-    plt.title('Raw Data')
-    plt.show()
-
+    # plot results
+    plt.figure(figsize=(10,4))
+    ax1 = plt.subplot(1,3,1)
+    ax1.scatter(Data_r[:, 0], Data_r[:, 1], 10, 'b')
+    ax1.set_xlabel('x')
+    ax1.set_ylabel('y')
+    ax1.set_title('Raw Data')
 
     Data1 = Data[0:num_points, 0:2]
     Data2 = Data[num_points:2*num_points, 0:2]
-    plt.scatter(Data1[:, 0], Data1[:, 1], 10, 'b')
-    plt.scatter(Data2[:, 0], Data2[:, 1], 10, 'r')
-    plt.xlabel('x')
-    plt.ylabel('y')
-    plt.title('True Value')
-    plt.show()
+    ax2 = plt.subplot(1,3,2)
+    ax2.scatter(Data1[:, 0], Data1[:, 1], 10, 'g')
+    ax2.scatter(Data2[:, 0], Data2[:, 1], 10, 'r')
+    ax2.set_xlabel('x')
+    ax2.set_ylabel('y')
+    ax2.set_title('True Value')
 
     Data_f1 = Data_f[Data_f[:,2]==0, :]
     Data_f2 = Data_f[Data_f[:,2]==1, :]
-    plt.scatter(Data_f1[:, 0], Data_f1[:, 1], 10, 'b')
-    plt.scatter(Data_f2[:, 0], Data_f2[:, 1], 10, 'r')
-    plt.xlabel('x')
-    plt.ylabel('y')
-    plt.title('Data Clustered by EM')
+    ax3 = plt.subplot(1,3,3)
+    ax3.scatter(Data_f1[:, 0], Data_f1[:, 1], 10, 'g')
+    ax3.scatter(Data_f2[:, 0], Data_f2[:, 1], 10, 'r')
+    ax3.set_xlabel('x')
+    ax3.set_ylabel('y')
+    ax3.set_title('Data Clustered by EM')
     plt.show()
 
 
