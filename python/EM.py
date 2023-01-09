@@ -53,7 +53,7 @@ def prob(point, mu, sigma, lambd):
     sigma = 2x2
     lambda = 1x2
     sigma has to be square (actually semi definite positive)
-    TODO: check sigma for that and fix it if it is not.
+    TODO: check for semidefinite positiveness and fix if not
     '''
     p = lambd
     for ii in range(len(point)):
@@ -119,8 +119,8 @@ def maximization(Data, Param):
 
 def EM(Data, Param, shift=1e8, epsilon=1e-5):       
     '''
-    This is the main EM algorithm. It has two steps Expectation and
-    Maximization. The whole process is done in a while loop until a desired
+    This is the main EM algorithm. It has two steps Expectation (E) and
+    Maximization (M). The whole process is done in a while loop until a desired
     error has reached. 
     Input: 
         Data: the dataset including the points and labels [x y label]
