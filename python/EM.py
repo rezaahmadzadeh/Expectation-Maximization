@@ -135,7 +135,7 @@ def EM(Data, Param, shift=1e8, epsilon=1e-5):
 
         shift = calc_distance(Param, Param_)
 
-        print(f'iter: {iter}, shift: {shift}, mean1: {Param_["mu1"]}, mean2: {Param_["mu2"]}')    
+        print(f'iter: {iter}, error: {shift}, mu1: {Param_["mu1"]}, mu2: {Param_["mu2"]}')    
 
         Data = Data_
         Param = Param_
