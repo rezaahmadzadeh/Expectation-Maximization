@@ -24,8 +24,20 @@ iteration: 7, error: 0.0000, mu1: [0.1833 4.7249], mu2: [4.9603 -0.1089]
 ```
 
 ## Example - Python ##
+Here, we generated a new 2D dataset similar to the one above and tested the python version of the algorithm.
 
+![testing EM algorithm](https://github.com/rezaahmadzadeh/Expectation-Maximization/blob/master/result/EM_result_python.png?raw=true "EM")
 
+The result that I get on my machine is as follows:
+
+```
+iter: 1, error: 2.029586515126125, mu1: [1.17678819 1.95190418], mu2: [3.77180604 2.96341528]
+iter: 2, error: 3.106544647452483, mu1: [0.41602816 3.22681386], mu2: [4.76689272 1.68264085]
+iter: 3, error: 3.2266364206724742, mu1: [-0.02893002  4.63086576], mu2: [5.40751145 0.05006616]
+iter: 4, error: 0.3650377672928439, mu1: [-0.04878351  4.83147512], mu2: [ 5.26045562 -0.02127781]
+iter: 5, error: 0.28674238851510725, mu1: [-0.06527338  4.97445883], mu2: [ 5.11766831 -0.01867893]
+iter: 6, error: 0.0, mu1: [-0.06527338  4.97445883], mu2: [ 5.11766831 -0.01867893]
+```
 ### Version ###
 *  2.0 - Python implementation added
 *  1.0 - MATLAB implementation
