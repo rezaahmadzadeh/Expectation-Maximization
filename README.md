@@ -1,11 +1,11 @@
 # Expectation-Maximization
-Expectation-Maximization (EM) algorithm in Matlab
+Expectation-Maximization (EM) algorithm in Matlab and Python
 
 This code implements the Expectation-Maximization (EM) algorithm and tests it on a simple 2D dataset.
 
 The Expectation–Maximization (EM) algorithm is an iterative method to find maximum likelihood or maximum a posteriori (MAP) estimates of parameters in statistical models, where the model depends on unobserved latent variables. The EM iteration alternates between performing an expectation (E) step, which creates a function for the expectation of the log-likelihood evaluated using the current estimate for the parameters, and a maximization (M) step, which computes parameters maximizing the expected log-likelihood found on the E step. These parameter-estimates are then used to determine the distribution of the latent variables in the next E step.
 
-## Example - MATLAB##
+## Example - MATLAB ##
 
 In this example, we first generate a dataset of points from two Normal distributions and label the dataset. This dataset with correct labels are our true values. Then we reshuffle the labels and run the EM algorithm for the new dataset. The EM algorithm clusters the dataset correctly and also estimates the parameters of two Normal distributions that could be used to draw the points. 
 
@@ -23,7 +23,7 @@ iteration: 6, error: 0.1810, mu1: [0.1833 4.7249], mu2: [4.9603 -0.1089]
 iteration: 7, error: 0.0000, mu1: [0.1833 4.7249], mu2: [4.9603 -0.1089] 
 ```
 
-## Example - Python##
+## Example - Python ##
 
 
 ### Version ###
@@ -36,7 +36,7 @@ iteration: 7, error: 0.0000, mu1: [0.1833 4.7249], mu2: [4.9603 -0.1089]
 * The algorithm is coded in Python 3.x
 * it relies on `numpy` and `scipy` modules
 * clone the repository
-* run the `test-em.py` from the `python` folder.
+* run the `test_em.py` from the `python` folder.
 
 #### MATLAB ####
 * The algorithm is coded in MATLAB
