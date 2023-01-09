@@ -1,3 +1,10 @@
+'''
+===================================================
+Expectation-Maximization (EM) Algorithm
+
+Code: Reza Ahmadzadeh - 2023
+===================================================
+'''
 import numpy as np
 from scipy.stats import norm
 
