@@ -47,40 +47,44 @@ def generate_random_data(n):
     D_shuffled = rng.permutation(D.copy(), axis=0)
     return D, D_shuffled
 
+def test():
+    # number of points in each cluster
+    num_points = 100
 
-# number of points in each cluster
-num_points = 100
+    # generate random data using two 2D Normal distributions with 100 data points 
+    Data, Data_r = generate_random_data(num_points)
 
-# generate random data using two 2D Normal distributions with 100 data points 
-Data, Data_r = generate_random_data(num_points)
+    # make some initial guess
+    Param = make_initial_guess()
 
-# make some initial guess
-Param = make_initial_guess()
+    # run EM to find the parameters 
+    Data_f, Param_f = EM(Data_r, Param)
 
-# run EM to find the parameters 
-Data_f, Param_f = EM(Data_r, Param)
-
-plt.scatter(Data_r[:, 0], Data_r[:, 1], 10, 'b')
-plt.xlabel('x')
-plt.ylabel('y')
-plt.title('Raw Data')
-plt.show()
+    plt.scatter(Data_r[:, 0], Data_r[:, 1], 10, 'b')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title('Raw Data')
+    plt.show()
 
 
-Data1 = Data[0:num_points, 0:2]
-Data2 = Data[num_points:2*num_points, 0:2]
-plt.scatter(Data1[:, 0], Data1[:, 1], 10, 'b')
-plt.scatter(Data2[:, 0], Data2[:, 1], 10, 'r')
-plt.xlabel('x')
-plt.ylabel('y')
-plt.title('True Value')
-plt.show()
+    Data1 = Data[0:num_points, 0:2]
+    Data2 = Data[num_points:2*num_points, 0:2]
+    plt.scatter(Data1[:, 0], Data1[:, 1], 10, 'b')
+    plt.scatter(Data2[:, 0], Data2[:, 1], 10, 'r')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title('True Value')
+    plt.show()
 
-Data_f1 = Data_f[Data_f[:,2]==0, :]
-Data_f2 = Data_f[Data_f[:,2]==1, :]
-plt.scatter(Data_f1[:, 0], Data_f1[:, 1], 10, 'b')
-plt.scatter(Data_f2[:, 0], Data_f2[:, 1], 10, 'r')
-plt.xlabel('x')
-plt.ylabel('y')
-plt.title('Data Clustered by EM')
-plt.show()
+    Data_f1 = Data_f[Data_f[:,2]==0, :]
+    Data_f2 = Data_f[Data_f[:,2]==1, :]
+    plt.scatter(Data_f1[:, 0], Data_f1[:, 1], 10, 'b')
+    plt.scatter(Data_f2[:, 0], Data_f2[:, 1], 10, 'r')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title('Data Clustered by EM')
+    plt.show()
+
+
+if __name__=='__main__':
+    test()
