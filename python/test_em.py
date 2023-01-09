@@ -2,16 +2,16 @@
 Expectation-Maximization (EM) Algorithm
 
 This is a test program for the Expectation-Maximization algorithm.
-At the beginning, we generate two sets of points from two normal
-distributions and label them as cluster 1 and 2. This will serve as our 
-true value dataset.
-The we reshuffle the labels to make the dataset ready for the algorithm.
+We first generate two sets of points from two normal multivariate
+distributions and label them as cluster 1 and 2 (0 and 1). This will 
+serve as our true value dataset.
+We then reshuffle the labels to make the dataset ready for the algorithm.
 Given the number of clusters, the algorithm is going to look at the data 
 and estimate paramters for two normal distributions that the data is drawn 
-from. These parameters include the means and standard variances of those 
-Normal Distributions.   
-In the next step, we make some initial guess and intentionally we use a bad
-guess for the parameters.
+from. These parameters include the means and covariances of those 
+normal distributions.   
+In the next step, the algorithm starts from initial guess for which we 
+use a set of bad (far) guesses intentionally.
 Now we run the EM algorithm and the algorithm starts from the initial guess
 and iteratively converges to the solution. 
 ===================================================
@@ -26,7 +26,8 @@ from EM import *
 def generate_random_data(n):
     '''
     This function generates random data
-    The points are drawn from two Normal Distributions with parameters (mu, sigma)
+    The points are drawn from two multivariate Normal Distributions 
+    with parameters (mu, sigma)
     Input: 
         n: number of points in each cluster
     Output: 
