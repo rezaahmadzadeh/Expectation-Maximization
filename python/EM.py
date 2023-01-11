@@ -49,9 +49,9 @@ def prob(point, mu, sigma, lambd):
     observed.; this is equivalent of the likelihood of the parameters \theta
     given data points X
     point = [x y]
-    mu = 1x2
-    sigma = 2x2
-    lambda = 1x2
+    mu : 1x2
+    sigma : 2x2
+    lambda : 1x2
     sigma has to be square (actually semi definite positive)
     TODO: check for semidefinite positiveness and fix if not
     '''
