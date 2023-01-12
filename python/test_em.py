@@ -48,6 +48,7 @@ def generate_random_data(n):
     D_shuffled = rng.permutation(D.copy(), axis=0)
     return D, D_shuffled
 
+
 def test():
     # number of points in each cluster
     num_points = 100

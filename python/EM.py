@@ -116,7 +116,6 @@ def maximization(Data, Param):
     return Param_
 
 
-
 def EM(Data, Param, shift=1e8, epsilon=1e-5):       
     '''
     This is the main EM algorithm. It has two steps Expectation (E) and
@@ -147,5 +146,3 @@ def EM(Data, Param, shift=1e8, epsilon=1e-5):
         Data = Data_
         Param = Param_
     return Data, Param
-
-
