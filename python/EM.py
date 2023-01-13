@@ -54,7 +54,7 @@ def prob(point, mu, sigma, lambd):
     lambda : 1x2
     sigma has to be square (actually semi definite positive)
     TODO: check for semidefinite positiveness and fix if not
-    Sigma = (Sigma + Sigma.T)  / 2 ??
+    Sigma = (Sigma + Sigma.T)  / 2
     '''
     p = lambd
     for ii in range(len(point)):
